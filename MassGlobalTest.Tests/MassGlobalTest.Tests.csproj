@@ -42,6 +42,9 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -56,7 +59,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="MasGlobalTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +67,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MassGlobalTest.BLL\MasGlobal.Business.csproj">
+      <Project>{60928B4F-0A0D-4900-9A3B-1FDD4A1FFC3E}</Project>
+      <Name>MasGlobal.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MassGlobalTest.Models\MasGlobal.Models.csproj">
+      <Project>{B9DF634E-78B4-4DCB-B6B6-2E3F10263AD3}</Project>
+      <Name>MasGlobal.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MassGlobalTest\MasGlobal.Web.csproj">
       <Project>{D0E06BF1-14DF-49ED-B173-CC77FF0C9E51}</Project>
       <Name>MasGlobal.Web</Name>
