@@ -47,13 +47,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MassGlobalTest.DAL\MassGlobalTest.DAL.csproj">
+    <ProjectReference Include="..\MassGlobalTest.DAL\MasGlobal.Data.csproj">
       <Project>{21838631-e9cd-450e-9581-f97ca68a8082}</Project>
-      <Name>MassGlobalTest.DAL</Name>
+      <Name>MasGlobal.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MassGlobalTest.Models\MassGlobalTest.Models.csproj">
+    <ProjectReference Include="..\MassGlobalTest.Models\MasGlobal.Models.csproj">
       <Project>{B9DF634E-78B4-4DCB-B6B6-2E3F10263AD3}</Project>
-      <Name>MassGlobalTest.Models</Name>
+      <Name>MasGlobal.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

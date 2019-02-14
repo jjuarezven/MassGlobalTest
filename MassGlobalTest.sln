@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassGlobalTest", "MassGlobalTest\MassGlobalTest.csproj", "{D0E06BF1-14DF-49ED-B173-CC77FF0C9E51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.Web", "MassGlobalTest\MasGlobal.Web.csproj", "{D0E06BF1-14DF-49ED-B173-CC77FF0C9E51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassGlobalTest.Tests", "MassGlobalTest.Tests\MassGlobalTest.Tests.csproj", "{97F825CD-350B-4483-8146-27CE60C746A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassGlobalTest.DAL", "MassGlobalTest.DAL\MassGlobalTest.DAL.csproj", "{21838631-E9CD-450E-9581-F97CA68A8082}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.Data", "MassGlobalTest.DAL\MasGlobal.Data.csproj", "{21838631-E9CD-450E-9581-F97CA68A8082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassGlobalTest.BLL", "MassGlobalTest.BLL\MassGlobalTest.BLL.csproj", "{60928B4F-0A0D-4900-9A3B-1FDD4A1FFC3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.Business", "MassGlobalTest.BLL\MasGlobal.Business.csproj", "{60928B4F-0A0D-4900-9A3B-1FDD4A1FFC3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassGlobalTest.Models", "MassGlobalTest.Models\MassGlobalTest.Models.csproj", "{B9DF634E-78B4-4DCB-B6B6-2E3F10263AD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.Models", "MassGlobalTest.Models\MasGlobal.Models.csproj", "{B9DF634E-78B4-4DCB-B6B6-2E3F10263AD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

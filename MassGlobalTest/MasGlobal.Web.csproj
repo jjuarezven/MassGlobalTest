@@ -126,6 +126,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -151,13 +152,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MassGlobalTest.BLL\MassGlobalTest.BLL.csproj">
+    <ProjectReference Include="..\MassGlobalTest.BLL\MasGlobal.Business.csproj">
       <Project>{60928b4f-0a0d-4900-9a3b-1fdd4a1ffc3e}</Project>
-      <Name>MassGlobalTest.BLL</Name>
+      <Name>MasGlobal.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MassGlobalTest.Models\MassGlobalTest.Models.csproj">
+    <ProjectReference Include="..\MassGlobalTest.Models\MasGlobal.Models.csproj">
       <Project>{b9df634e-78b4-4dcb-b6b6-2e3f10263ad3}</Project>
-      <Name>MassGlobalTest.Models</Name>
+      <Name>MasGlobal.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

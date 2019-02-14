@@ -64,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MassGlobalTest\MassGlobalTest.csproj">
+    <ProjectReference Include="..\MassGlobalTest\MasGlobal.Web.csproj">
       <Project>{D0E06BF1-14DF-49ED-B173-CC77FF0C9E51}</Project>
-      <Name>MassGlobalTest</Name>
+      <Name>MasGlobal.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
