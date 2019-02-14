@@ -1,21 +1,30 @@
 ﻿using MassGlobalTest.Models;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Linq;
 
 namespace MassGlobalTest.DAL
 {
 	public static class Repository
     {
-		public static List<Employee> GetEmployees()
+		public static IEnumerable<Employee> GetEmployees(int employeeId = 0)
 		{
-			var list = new List<Employee>();
-			HttpClient client = new HttpClient();
+			IEnumerable<Employee> employeesList = null;
+			var client = new HttpClient();
 			var result = client.GetAsync("http://masglobaltestapi.azurewebsites.net/api/Employees").Result;
 			if (result.IsSuccessStatusCode)
 			{
-				list = result.Content.ReadAsAsync<List<Employee>>().Result;
+				if (employeeId == 0)
+				{
+					employeesList = result.Content.ReadAsAsync<List<Employee>>().Result; 
+				}
+				else
+				{
+					employeesList = result.Content.ReadAsAsync<List<Employee>>().Result.Where(emp => emp.Id == employeeId);
+				}
 			}
-			return list;
+			return employeesList;
 		}
+
 	}
 }
