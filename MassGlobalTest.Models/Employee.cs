@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MassGlobalTest.Models
+﻿namespace MassGlobalTest.Models
 {
 	public class Employee
 	{
@@ -16,5 +10,11 @@ namespace MassGlobalTest.Models
 		public string RoleDescription { get; set; }
 		public double HourlySalary { get; set; }
 		public double MonthlySalary { get; set; }
+		public double AnnualSalary { get; set; }
+	}
+
+	public abstract class EmployeeCalculated : Employee
+	{
+		public abstract double CalculateAnnualSalary(double salary);
 	}
 }

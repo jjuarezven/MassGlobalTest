@@ -1,16 +1,12 @@
 ﻿using MassGlobalTest.Models;
-using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
 
 namespace MassGlobalTest.DAL
 {
-    public class Repository
+	public static class Repository
     {
-		public List<Employee> GetEmployees()
+		public static List<Employee> GetEmployees()
 		{
 			var list = new List<Employee>();
 			HttpClient client = new HttpClient();
