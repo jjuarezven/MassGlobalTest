@@ -7,10 +7,10 @@ namespace MassGlobalTest.Controllers
 	public class EmployeeController : ApiController
 	{
 		// GET api/<controller>
-		public IHttpActionResult Get(int? employeeId = 0)
+		public IHttpActionResult Get(int employeeId)
 		{
 			var rules = new Rules();
-			var employees = rules.GetEmployees(employeeId.Value);
+			var employees = rules.GetEmployees(employeeId);
 			if (!employees.Any())
 			{
 				return NotFound();

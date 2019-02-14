@@ -2,7 +2,7 @@
 {
 	public class MonthlyEmployee : EmployeeCalculated
 	{
-		public override double CalculateAnnualSalary(double salary)
+		public override decimal CalculateAnnualSalary(decimal salary)
 		{
 			return salary * 12;
 		}

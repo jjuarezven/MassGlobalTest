@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeCalculated.cs" />
     <Compile Include="IEmployeeFactory.cs" />
     <Compile Include="HourlyEmployee.cs" />
     <Compile Include="HourlyEmployeeFactory.cs" />

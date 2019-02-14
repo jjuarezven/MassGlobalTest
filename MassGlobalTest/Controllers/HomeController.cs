@@ -1,9 +1,8 @@
 ﻿using MassGlobalTest.Models;
-using System;
+using MassGlobalTest.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace MassGlobalTest.Controllers
@@ -18,39 +17,44 @@ namespace MassGlobalTest.Controllers
 
 		public ActionResult GetEmployees(int? employeeId)
 		{
-			IEnumerable<Employee> employeesList = null;
-			using (var client = new HttpClient())
+			var employeesList = GetEmployeesFromApi(employeeId);
+
+			var viewModelEmployeesList = new List<EmployeeViewModel>();
+			foreach (var item in employeesList)
 			{
-				client.BaseAddress = new Uri("http://localhost:7557/api/");
-
-
-				Task<HttpResponseMessage> responseTask = null;
-				if (!employeeId.HasValue)
+				viewModelEmployeesList.Add(new EmployeeViewModel
 				{
-					responseTask = client.GetAsync("Employee");
-				}
-				else
-				{
-					responseTask = client.GetAsync("Employee/" + "?employeeId=" + employeeId.ToString());
-				}
-				responseTask.Wait();
-
-				var result = responseTask.Result;
-				if (result.IsSuccessStatusCode)
-				{
-					var readTask = result.Content.ReadAsAsync<IList<Employee>>();
-					readTask.Wait();
-
-					employeesList = readTask.Result;
-				}
-				else
-					employeesList = Enumerable.Empty<Employee>();
-
-				ModelState.AddModelError(string.Empty, "This Employee is not registered, please try with a valid Employee Id");
+					AnnualSalary = item.AnnualSalary,
+					ContractTypeName = item.ContractTypeName,
+					HourlySalary = item.HourlySalary,
+					MonthlySalary = item.MonthlySalary,
+					Name = item.Name,
+					RoleDescription = item.RoleDescription,
+					RoleId = item.RoleId,
+					RoleName = item.RoleName
+				});
 			}
-			return View(employeesList);
+			return View(viewModelEmployeesList);
 		}
 
+		private IEnumerable<Employee> GetEmployeesFromApi(int? employeeId)
+		{
+			IEnumerable<Employee> employeesList = null;
+			var client = new HttpClient();
+			var uri = @"http://localhost:7557/api/Employee?employeeId=";
+			uri = employeeId.HasValue ? uri + employeeId.ToString() : uri = uri + "0";
+			var result = client.GetAsync(uri).Result;
+			if (result.IsSuccessStatusCode)
+			{
+				employeesList = result.Content.ReadAsAsync<List<Employee>>().Result;
+			}
+			else
+			{
+				employeesList = Enumerable.Empty<Employee>();
+				ModelState.AddModelError(string.Empty, "This Employee is not registered, please try with a valid Employee Id");
+			}
+			return employeesList;
+		}
 	}
 }
 

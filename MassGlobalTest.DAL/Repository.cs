@@ -6,7 +6,7 @@ using System.Linq;
 namespace MassGlobalTest.DAL
 {
 	public static class Repository
-    {
+	{
 		public static IEnumerable<Employee> GetEmployees(int employeeId = 0)
 		{
 			IEnumerable<Employee> employeesList = null;

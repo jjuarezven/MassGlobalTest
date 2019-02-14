@@ -33,7 +33,7 @@ namespace MassGlobalTest.BLL
 		private static void ProcessEmployee(Employee employee)
 		{
 			IEmployeeFactory employeeFactory = null;
-			var salary = 0D;
+			var salary = 0m;
 			switch (employee.ContractTypeName)
 			{
 				case "HourlySalaryEmployee":
